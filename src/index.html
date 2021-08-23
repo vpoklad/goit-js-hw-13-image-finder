@@ -28,11 +28,19 @@
           <button type="submit" class="search-form__button">
             <span class="material-icons md-dark md-24"> search </span>
           </button>
-          <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+          <input
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Search images..."
+            required
+          />
         </form>
         <ul class="gallery list">
           <!-- Список <li> с карточками изображений -->
         </ul>
+        <div id="intersector"></div>
+        <button type="button" class="more_button">Discover more</button>
       </div>
     </section>
 

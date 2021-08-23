@@ -23,9 +23,25 @@
   top: 50%;
   transform: translateY(-50%);
   display: inline-block;
-  width: 58px;
-  height: 58px;
+  width: 55px;
+  height: 55px;
   border-color: transparent;
 
   cursor: pointer;
+}
+
+.more_button {
+  display: none;
+}
+
+.more_button.isActive {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 275px;
+  padding: 12px 60px;
+  background-color: #02be6e;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
 }
