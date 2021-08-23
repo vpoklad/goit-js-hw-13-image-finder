@@ -1,0 +1,81 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.17;
+  color: #242424;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.list {
+  padding: 0;
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page_title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.inputJS {
+  font-size: 19px;
+  display: block;
+  padding: 20px 17px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  height: 62px;
+  width: 600px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.12));
+  border-radius: 4px;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }

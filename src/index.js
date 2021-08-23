@@ -1,41 +1,67 @@
-import menues from './menu.json';
+import './sass/main.scss';
+// import '../node_modules/@pnotify/core/BrightTheme.css';
+import fetchImages from '../src/js/apiService'
+import cardTemplate from '../src/templates/cardTemplate';
 
-const Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme',
+
+
+// import {error, notice } from '../node_modules/@pnotify/core/dist/PNotify.js';
+
+
+// const debounce = require('lodash.debounce');
+  
+
+const refs = {
+    form: document.querySelector('#search-form'),
+    target: document.querySelector('.gallery')
+   
 };
-const switchTheme = document.querySelector('#theme-switch-toggle')
-switchTheme.addEventListener('change', onSwithCange);
-document.body.classList.add(Theme.LIGHT);
-const isDarkTheme = localStorage.getItem('isDarkTheme');
-checkThemeState();
+let pageNumber = 1;
+let markup = '';
 
+refs.form.addEventListener('submit', onFormSubmit)
 
-
-function checkThemeState() {
-    if (isDarkTheme === 'true') {
-        document.body.classList.replace(Theme.LIGHT, Theme.DARK);
-        switchTheme.checked = true;
-        return
-    }
-    else {
-        document.body.classList.replace(Theme.DARK, Theme.LIGHT);
-        switchTheme.checked = false;
-
-    }
+function OnImgClick(e) {
+    if (e.target.nodeName !== "IMG") return;
+markup = ''
+    searchQuery = e.target.dataset.code;
+   
     
 }
 
 
-function onSwithCange(evt) {
-    
-    localStorage.setItem('isDarkTheme',evt.target.checked)
-    if (evt.target.checked) {
-        document.body.classList.remove(Theme.LIGHT)
-        document.body.classList.add(Theme.DARK)
+function onFormSubmit(e) {
+    pageNumber = 1;
+    e.preventDefault();
+    const form = e.currentTarget;
+    const searchQuery = form.elements.query.value;   
+   
+
+    if (!searchQuery.trim()) {
+       return; 
     }
     else {
-        document.body.classList.add(Theme.LIGHT)
-        document.body.classList.remove(Theme.DARK)
-    };
+        fetchImages(searchQuery.trim(), pageNumber)
+    .then(console.log)
+    .catch(error => console.log(error)) 
+    }
+     
+
+   
+   
+    
 }
+    
+
+
+function createMarkup(data) {
+    markup = cardTemplate(data);
+    refs.target.insertAdjacentHTML('beforeend', markup)
+    
+}
+
+
+
+    
+
+
