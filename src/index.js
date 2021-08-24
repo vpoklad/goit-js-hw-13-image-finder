@@ -142,7 +142,7 @@ const onEntry = entries => {
     });
 };
 const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '175px',
+  rootMargin: '180px',
 });
 observer.observe(refs.intersector);
 
