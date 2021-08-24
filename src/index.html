@@ -19,6 +19,7 @@
       crossorigin="anonymous"
     />
     <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="../node_modules/basiclightbox/dist/basicLightbox.min.css" /> -->
   </head>
   <body>
     <section class="section">
@@ -40,10 +41,12 @@
           <!-- Список <li> с карточками изображений -->
         </ul>
         <div id="intersector"></div>
-        <button type="button" class="more_button">Discover more</button>
+        <!-- <button type="button" class="more_button">Discover more</button> -->
       </div>
     </section>
-
+    <button class="up_button" title="Up button">
+      <i class="material-icons md-dark md-36">arrow_upward</i>
+    </button>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>

@@ -44,4 +44,9 @@
   color: #fff;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
+  &:hover {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+    background-color: #0b8651;
+  }
 }

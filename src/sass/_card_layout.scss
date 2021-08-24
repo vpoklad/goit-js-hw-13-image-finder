@@ -7,7 +7,18 @@
   grid-row-gap: 20px;
 }
 
-.gallery__item {
+// .gallery__item {
+//   position: relative;
+//   overflow: hidden;
+//   &:hover {
+//     cursor: pointer;
+//     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+//   }
+//   &:hover .stats {
+//     transform: translateY(0);
+//   }
+// }
+.photo-card {
   position: relative;
   overflow: hidden;
   &:hover {
@@ -18,11 +29,8 @@
     transform: translateY(0);
   }
 }
-.photo-card {
-  height: 100%;
-}
 .photo-card img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .stats {
