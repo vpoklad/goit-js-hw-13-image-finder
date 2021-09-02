@@ -6,7 +6,7 @@ import * as basicLightbox from 'basiclightbox';
 import {error, notice } from '../node_modules/@pnotify/core/dist/PNotify.js';
 
 
-const debounce = require('lodash.debounce');
+import throttle from 'lodash.throttle';
   
 
 const refs = {
@@ -26,9 +26,20 @@ refs.form.addEventListener('submit', onFormSubmit)
 // refs.buttonMore.addEventListener('click', debounce(onMoreButtonclick, 300))
 refs.target.addEventListener('click',OnImgClick)
 refs.upButton.addEventListener('click', scrollToTop)
+window.addEventListener('scroll', throttle(trackScroll), 100);
 
 
-
+function trackScroll() {
+          let scrolled = window.pageYOffset;
+          let coords = document.documentElement.clientHeight;
+      
+          if (scrolled > coords) {
+            refs.upButton.classList.add('isActive');
+          }
+          if (scrolled < coords) {
+            refs.upButton.classList.remove('isActive');
+          }
+        }
 
 function scrollToTop() {
 refs.upButton.classList.remove('isActive');
@@ -125,7 +136,7 @@ const onEntry = entries => {
     entries.forEach(entry => {
 
         if (entry.isIntersecting && searchQuery !== '') {
-            refs.upButton.classList.add('isActive')
+            // refs.upButton.classList.add('isActive')
             if (pageNumber === 1) {
                 pageNumber = 2; //Это костыль чтоб обсервер не выводил дважды страницу 1 при смене запроса
             }
