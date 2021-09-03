@@ -127,8 +127,9 @@ notice({
 // }
 
 function hideKeyboard() {
-    document.activeElement.blur();
-    $("input").blur();
+    
+    document.querySelector('[name="query"]').blur();
+    
 }
 function createMarkup(data) {
 
@@ -153,7 +154,7 @@ const onEntry = entries => {
             })
     .catch(error => console.log(error))
         } 
-    npm});
+    });
 };
 const observer = new IntersectionObserver(onEntry, {
   rootMargin: '180px',
