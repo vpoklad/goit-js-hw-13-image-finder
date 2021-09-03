@@ -125,7 +125,7 @@ notice({
 // }
 
 function hideKeyboard() {
-    document.activeElement.getBoundingClientRect();
+    document.activeElement.blur();
     $("input").blur();
 }
 function createMarkup(data) {
