@@ -91,10 +91,11 @@ notice({
             text: `Found more than ${result.total} results`,
     delay: 3000
   });
-                    hideKeyboard();
+                    
                     createMarkup(result);
                     pageNumber += 1;
                     form.reset();
+                    hideKeyboard();
                     // refs.buttonMore.classList.add('isActive')
                 } else {
                          error({
