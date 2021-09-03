@@ -91,7 +91,7 @@ notice({
             text: `Found more than ${result.total} results`,
     delay: 3000
   });
-
+                    hideKeyboard();
                     createMarkup(result);
                     pageNumber += 1;
                     form.reset();
@@ -124,7 +124,10 @@ notice({
 //     .catch(error => console.log(error)) 
 // }
 
-
+function hideKeyboard() {
+    document.activeElement.getBoundingClientRect();
+    $("input").blur();
+}
 function createMarkup(data) {
 
     markup = cardTemplate(data);
