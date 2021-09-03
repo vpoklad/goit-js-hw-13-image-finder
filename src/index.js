@@ -95,7 +95,8 @@ notice({
                     createMarkup(result);
                     pageNumber += 1;
                     form.reset();
-                    hideKeyboard();
+                    setTimeout(hideKeyboard(), 100);
+                    
                     // refs.buttonMore.classList.add('isActive')
                 } else {
                          error({
