@@ -23,11 +23,13 @@
   margin-bottom: 30px;
   position: relative;
   overflow: hidden;
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
   }
-  &:hover .stats {
+  &:hover .stats,
+  &:focus .stats {
     transform: translateY(0);
   }
 }
