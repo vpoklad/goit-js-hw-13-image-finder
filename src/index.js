@@ -147,10 +147,8 @@ const onEntry = entries => {
                 pageNumber +=1;                
             })
     .catch(error => console.log(error))
-        } else {
-            
-        }
-    });
+        } 
+    npm});
 };
 const observer = new IntersectionObserver(onEntry, {
   rootMargin: '180px',
