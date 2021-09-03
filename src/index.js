@@ -95,7 +95,7 @@ notice({
                     createMarkup(result);
                     pageNumber += 1;
                     form.reset();
-                    setTimeout(hideKeyboard(), 100);
+                    // setTimeout(hideKeyboard(), 100);
                     
                     // refs.buttonMore.classList.add('isActive')
                 } else {
